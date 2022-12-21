@@ -1,0 +1,14 @@
+
+with-compiler: ghc-9.2.4
+
+jobs: $ncpus
+
+packages: 
+  showable.cabal
+  
+package *
+  haddock-html: true
+  haddock-hoogle: true
+  haddock-hyperlink-source: true
+  haddock-quickjump: true
+  haddock-internal: true

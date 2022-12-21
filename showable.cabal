@@ -1,0 +1,52 @@
+cabal-version: 2.4
+
+name:        showable
+category:    Data
+version:     1.0.0
+synopsis:    TODO
+description: TODO
+
+author:       jacob leach
+maintainer:   jacobleach@protonmail.com
+copyright:    2022, Jacob Leach
+homepage:     https://github.com/riz0id/showable
+license:      ISC
+license-file: LICENSE
+build-type:   Simple
+
+extra-source-files:
+  CHANGELOG.md
+  README.md
+
+tested-with:
+  GHC == 9.2.4
+
+common common
+  default-language: Haskell2010
+
+  default-extensions:
+    DeriveDataTypeable DeriveGeneric DeriveLift GADTs ImportQualifiedPost 
+    KindSignatures RankNTypes
+
+  ghc-options:
+    -Wall
+    -Wcompat
+    -Wcpp-undef
+    -Widentities
+    -Wmissing-export-lists
+
+  build-depends:
+    , base >= 4.16.3 && < 4.17
+
+library
+  import:         common
+  hs-source-dirs: src
+
+  ghc-options:
+    -j2
+
+  build-depends:
+    , template-haskell >= 2.18.0 && < 2.19
+
+  exposed-modules:
+    Data.Showable
