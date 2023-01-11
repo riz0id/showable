@@ -1,4 +1,4 @@
-{ ghc ? "ghc924" }:
+{ ghc ? "ghc942" }:
 
 let 
   pkgs = import ./default.nix { 
@@ -6,7 +6,6 @@ let
   };
 in pkgs.mkShell {
   buildInputs = (with pkgs; [
-    hlint
     haskell-language-server
   ]);
 }
